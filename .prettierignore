@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # strapi
-strapi-backend/dist/build
+strapi-backend/dist
