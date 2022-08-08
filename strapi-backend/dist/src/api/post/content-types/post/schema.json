@@ -1,33 +1,33 @@
 {
-  "kind": "collectionType",
-  "collectionName": "posts",
-  "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "Post",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "Title": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "kind": "collectionType",
+    "collectionName": "posts",
+    "info": {
+        "singularName": "post",
+        "pluralName": "posts",
+        "displayName": "Post",
+        "description": ""
     },
-    "Description": {
-      "type": "string"
+    "options": {
+        "draftAndPublish": true
     },
-    "Content": {
-      "type": "richtext",
-      "required": true
-    },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title",
-      "required": true
+    "pluginOptions": {},
+    "attributes": {
+        "Title": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "richtext",
+            "required": true
+        },
+        "Slug": {
+            "type": "uid",
+            "targetField": "Title",
+            "required": true
+        }
     }
-  }
 }
