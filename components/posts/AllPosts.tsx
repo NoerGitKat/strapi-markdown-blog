@@ -15,7 +15,7 @@ export default function AllPosts({ posts }: IAllPostsProps) {
             const { Title, Description, Slug, createdAt, updatedAt, publishedAt } = post.attributes;
             return (
               <li key={Slug}>
-                <Link href={`/${Slug}`}>
+                <Link href={`/posts/${Slug}`}>
                   <a>
                     <article className="card">
                       <aside className="card__title">

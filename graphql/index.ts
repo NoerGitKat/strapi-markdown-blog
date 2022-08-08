@@ -31,8 +31,8 @@ const GET_ALL_POSTS = gql`
 `;
 
 const GET_INDIVIDUAL_POST = gql`
-  query ($slugUrl: String!) {
-    posts(filters: { urlSlug: { eq: $slugUrl } }) {
+  query ($slug: String!) {
+    posts(filters: { Slug: { eq: $slug } }) {
       data {
         attributes {
           Title

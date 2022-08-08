@@ -1,7 +1,7 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
 import type { GetStaticProps, NextPage } from "next";
 import { AllPosts } from "../components/posts";
 import { GET_ALL_POSTS } from "../graphql";
+import apolloClient from "../graphql/apollo";
 import { IPost } from "../interfaces";
 
 const Home: NextPage<{ posts: Pick<IPost, "attributes">[] }> = ({ posts = [] }) => {
@@ -17,12 +17,8 @@ const Home: NextPage<{ posts: Pick<IPost, "attributes">[] }> = ({ posts = [] }) 
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const apolloClient = new ApolloClient({
-    uri: process.env.STRAPI_GRAPHQL_URI || "http://localhost:1337/graphql",
-    cache: new InMemoryCache(),
-  });
-
   try {
+    // TODO: Add typing
     const { data } = await apolloClient.query({ query: GET_ALL_POSTS });
 
     return {
